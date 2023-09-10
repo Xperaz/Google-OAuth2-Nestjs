@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                            String   @id @unique @default(uuid())
+  login                         String   @unique
+  email                         String   @unique
+  password                      String?
+  name                          String?
+  kind                          String?
+  avatar                        String?
+  bg_color                      String[] @default(["#918CA9", "#211F2F"])
+  paddle_color                  String?  @default("#E0E0E0")
+  ball_color                    String?  @default("#E0E0E0")
+  status                        String   @default("offline")
+  TotalWin                      Int      @default(0)
+  TotalLose                     Int      @default(0)
+  TotalDraw                     Int      @default(0)
+  cleanSheet                    Boolean  @default(false)
+  Machine                       Boolean  @default(false)
+  TotalMatch                    Int      @default(0)
+  Level                         Float    @default(0.0)
+  location                      String?
+  intraId                       Int?
+  banner                        String?
+  is_active                     Boolean  @default(false)
+  created_at                    DateTime @default(now())
+  updated_at                    DateTime @updatedAt
+  twoFactorAuthenticationSecret String?
+  twoFA                         Boolean  @default(false)
+  logedFirstTime                Boolean  @default(false)
+}

@@ -1,0 +1,16 @@
+1- npm install --save @nestjs/passport passport passport-google-oauth20
+
+
+2- npm install -D @types/passport-google-oauth20
+
+
+my info: {
+  sub: '103680071028028619527',
+  name: 'Azedine Ouhadou',
+  given_name: 'Azedine',
+  family_name: 'Ouhadou',
+  picture: 'https://lh3.googleusercontent.com/a/ACg8ocJSQp_Cy3LErgwatP3JHFBxGhkYfNUOXRfKQA_XkNZtzg=s96-c',
+  email: 'azouhadou@gmail.com',
+  email_verified: true,
+  locale: 'en'
+}
